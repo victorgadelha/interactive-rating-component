@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+}
+
+:root {
+    /*### Primary*/
+    --Orange: hsl(25, 97%, 53%);
+
+    /*### Neutral*/
+    --White: rgb(255, 255, 255);
+    --Light-Grey: rgb(149, 158, 172);
+    --Medium-Grey: rgb(124, 135, 152);
+    --Dark-Blue: rgb(37, 45, 55);
+    --Very-Dark-Blue: rgb(18, 20, 23);
+
+    /*## Typography*/
+    --Font-size-paragraph: 15px;
+    --font-regular-weight: 100;
+    --font-bold-weight: 700;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+} 
+
+.rating-container {
+    padding: 2rem;
+    margin: 0 auto;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 25px;
+    background-color: var(--Very-Dark-Blue);
+    margin-bottom: 1rem;
+}
+
+.star-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.star {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    color: var(--Medium-Grey);
+    background-color: var(--Dark-Blue);
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
+
+img {
+    width: .9rem;
+    height: .9rem;
+}
+
+.title-main-card {
+    font-weight: var(--font-bold-weight);
+    color: var(--White);
+    margin-bottom: 1rem;
+}
+
+.paragraph-main-card {
+    max-width: 21rem;
+    font-size: var(--Font-size-paragraph);
+    font-weight: var(--font-regular-weight);
+    color: var(--Light-Grey);
+    margin-bottom: 2rem;
+}
+
+.rate-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rate {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    color: var(--Medium-Grey);
+    background-color: var(--Dark-Blue);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.rate:hover {
+    color: var(--White);
+    background-color: var(--Light-Grey);
+}
+
+#submit-button {
+    cursor: pointer;
+    width: 21rem;
+    height: 2.5rem;
+    text-transform: uppercase;
+    color: var(--White);
+    background-color: var(--Orange);
+    border-radius: 2rem;
+}
+
+#submit-button:hover {
+    color: var(--Orange);
+    background-color: var(--White);
+}   
+
+.greetings-container {
+    padding: 2rem;
+    margin: 0 auto;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 25px;
+    background-color: var(--Very-Dark-Blue);
+    margin-bottom: 1rem;
+}
+
+.figure-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.greetings-image {
+    width: 8rem;
+    height: 5.5rem
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.paragraph-greetings-card-01 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paragraph-greetings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    height: 1.7rem;
+    font-weight: var(--font-regular-weight);
+    color: var(--Orange);
+    background-color: var(--Dark-Blue);
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+}
+
+.title-greetings-card {
+    color: var(--White);
+    margin-bottom: .5rem;
+}
+
+.paragraph-greetings-card-02 {
+    max-width: 20.5rem;
+    text-align: center;
+    line-height: 1.5rem;
+    font-size: var(--Font-size-paragraph);
+    font-weight: var(--font-regular-weight);
+    color: var(--Light-Grey);
+}
+
+.hide {
+    display: none;
+}
+
+
+.attribution {
+    color: var(--White);
+}
