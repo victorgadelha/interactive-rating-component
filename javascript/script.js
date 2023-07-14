@@ -3,6 +3,7 @@ const button = document.querySelector('#submit-button');
 const firstCard = document.querySelector('.rating-container');
 const secondCard = document.querySelector('.greetings-container');
 const finalRate = document.querySelector('.paragraph-greetings');
+const starContainer = document.querySelector('.star-container');
 
 button.addEventListener("click", (e) => {
   if (isButtonSelected()) {
@@ -16,6 +17,8 @@ button.addEventListener("click", (e) => {
 
 rateElements.forEach(rateElement => rateElement.addEventListener("click", toggleColor));
 rateElements.forEach(rateElement => rateElement.addEventListener("click", isButtonSelected));
+rateElements.forEach(rateElement => rateElement.addEventListener("click", rateStar));
+
 document.addEventListener("click", resetColor);
 
 function toggleColor() {
@@ -50,4 +53,13 @@ function isButtonSelected() {
       return true;
     }
   }
+}
+
+function rateStar() {
+  starBox = document.createElement("span");
+  starImg = document.createElement("img");
+  starImg.src = "./images/icon-star.svg"
+  starBox.classList.add("star");
+  starBox.appendChild(starImg);
+  starContainer.appendChild(starBox);
 }
