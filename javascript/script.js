@@ -19,7 +19,7 @@ rateElements.forEach(rateElement => rateElement.addEventListener("click", toggle
 rateElements.forEach(rateElement => rateElement.addEventListener("click", isButtonSelected));
 rateElements.forEach(rateElement => rateElement.addEventListener("click", rateStar));
 
-document.addEventListener("click", resetColor);
+document.addEventListener("click", resetColorAndStars);
 
 function toggleColor() {
   const clickedElement = this;
@@ -37,7 +37,7 @@ function toggleColor() {
   });
 }
 
-function resetColor(event) {
+function resetColorsAndStars(event) {
   if (!event.target.classList.contains("rate")) {
       rateElements.forEach(rateElement => {
       rateElement.style.color = "";
