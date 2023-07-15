@@ -62,23 +62,9 @@ function isButtonSelected() {
   }
 }
 
-function rateStar(e) {
-  const starBox = document.createElement("span");
-  const starImg = document.createElement("img");
-  starImg.src = "./images/icon-star.svg"
-  starBox.classList.add("star");
-  starBox.appendChild(starImg);
-
-  const rateValue = parseInt(e.target.innerHTML)
-  for (let i = 1; i <= rateValue.innerHTML; i++) {
-    starContainer.appendChild(starBox)
-  }
-}
-
-function rateStar(e) {
-  const rateValue = parseInt(e.target.innerHTML);
+function rateStar() {
+  const rateValue = parseInt(this.innerHTML);
   starContainer.innerHTML = ""; // Limpa as estrelas existentes
-
   for (let i = 1; i <= rateValue; i++) {
     const starBox = document.createElement("span");
     const starImg = document.createElement("img");
