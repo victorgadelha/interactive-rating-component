@@ -5,7 +5,7 @@ const secondCard = document.querySelector('.greetings-container');
 const finalRate = document.querySelector('.paragraph-greetings');
 const starContainer = document.querySelector('.star-container');
 
-button.addEventListener("click", (e) => {
+button.addEventListener("click", (e) => { /* */
   if (isButtonSelected()) {
     e.preventDefault();
     firstCard.classList.toggle('hide');
@@ -14,7 +14,7 @@ button.addEventListener("click", (e) => {
     e.preventDefault();
   }
 });
-
+                          
 rateElements.forEach(rateElement => rateElement.addEventListener("click", toggleColor));
 rateElements.forEach(rateElement => rateElement.addEventListener("click", isButtonSelected));
 rateElements.forEach(rateElement => rateElement.addEventListener("click", rateStar));
@@ -39,9 +39,16 @@ function toggleColor() {
 
 function resetColor(event) {
   if (!event.target.classList.contains("rate")) {
-    rateElements.forEach(rateElement => {
+      rateElements.forEach(rateElement => {
       rateElement.style.color = "";
       rateElement.style.backgroundColor = "";
+      starContainer.innerHTML = ""
+      const starBox = document.createElement("span");
+      const starImg = document.createElement("img");
+      starBox.appendChild(starImg);
+      starImg.src = "./images/icon-star.svg";
+      starBox.classList.add("star");
+      starContainer.appendChild(starBox)
     });
   }
 }
@@ -55,11 +62,29 @@ function isButtonSelected() {
   }
 }
 
-function rateStar() {
-  starBox = document.createElement("span");
-  starImg = document.createElement("img");
+function rateStar(e) {
+  const starBox = document.createElement("span");
+  const starImg = document.createElement("img");
   starImg.src = "./images/icon-star.svg"
   starBox.classList.add("star");
   starBox.appendChild(starImg);
-  starContainer.appendChild(starBox);
+
+  const rateValue = parseInt(e.target.innerHTML)
+  for (let i = 1; i <= rateValue.innerHTML; i++) {
+    starContainer.appendChild(starBox)
+  }
+}
+
+function rateStar(e) {
+  const rateValue = parseInt(e.target.innerHTML);
+  starContainer.innerHTML = ""; // Limpa as estrelas existentes
+
+  for (let i = 1; i <= rateValue; i++) {
+    const starBox = document.createElement("span");
+    const starImg = document.createElement("img");
+    starImg.src = "./images/icon-star.svg";
+    starBox.classList.add("star");
+    starBox.appendChild(starImg);
+    starContainer.appendChild(starBox);
+  }
 }
