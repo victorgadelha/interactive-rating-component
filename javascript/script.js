@@ -5,7 +5,7 @@ const secondCard = document.querySelector('.greetings-container');
 const finalRate = document.querySelector('.paragraph-greetings');
 const starContainer = document.querySelector('.star-container');
 
-button.addEventListener("click", (e) => { /* */
+button.addEventListener("click", (e) => {
   if (isButtonSelected()) {
     e.preventDefault();
     firstCard.classList.toggle('hide');
@@ -14,19 +14,17 @@ button.addEventListener("click", (e) => { /* */
     e.preventDefault();
   }
 });
-                          
+
 rateElements.forEach(rateElement => rateElement.addEventListener("click", toggleColor));
-rateElements.forEach(rateElement => rateElement.addEventListener("click", isButtonSelected));
 rateElements.forEach(rateElement => rateElement.addEventListener("click", rateStar));
 
-document.addEventListener("click", resetColorAndStars);
+document.addEventListener("click", resetColorsAndStars);
 
 function toggleColor() {
-  const clickedElement = this;
-  const rate = clickedElement.innerHTML;
-
+  const rate = this.innerHTML;
+  
   rateElements.forEach(rateElement => {
-    if (rateElement === clickedElement) {
+    if (rateElement.innerHTML === rate) {
       rateElement.style.color = "var(--White)";
       rateElement.style.backgroundColor = "var(--Light-Grey)";
       finalRate.innerHTML = `You selected ${rate} out of 5`;
@@ -39,17 +37,18 @@ function toggleColor() {
 
 function resetColorsAndStars(event) {
   if (!event.target.classList.contains("rate")) {
-      rateElements.forEach(rateElement => {
+    rateElements.forEach(rateElement => {
       rateElement.style.color = "";
       rateElement.style.backgroundColor = "";
-      starContainer.innerHTML = ""
-      const starBox = document.createElement("span");
-      const starImg = document.createElement("img");
-      starBox.appendChild(starImg);
-      starImg.src = "./images/icon-star.svg";
-      starBox.classList.add("star");
-      starContainer.appendChild(starBox)
     });
+    
+    starContainer.innerHTML = "";
+    const starBox = document.createElement("span");
+    const starImg = document.createElement("img");
+    starImg.src = "./images/icon-star.svg";
+    starBox.classList.add("star");
+    starBox.appendChild(starImg);
+    starContainer.appendChild(starBox);
   }
 }
 
@@ -60,11 +59,12 @@ function isButtonSelected() {
       return true;
     }
   }
+  return false;
 }
 
 function rateStar() {
   const rateValue = parseInt(this.innerHTML);
-  starContainer.innerHTML = ""; // Limpa as estrelas existentes
+  starContainer.innerHTML = "";
   for (let i = 1; i <= rateValue; i++) {
     const starBox = document.createElement("span");
     const starImg = document.createElement("img");
