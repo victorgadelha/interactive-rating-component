@@ -37,7 +37,7 @@ function toggleColor() {
 
 function resetColorsAndStars(event) {
   if (!event.target.classList.contains("rate")) {
-    rateElements.forEach(rateElement => {
+      rateElements.forEach(rateElement => {
       rateElement.style.color = "";
       rateElement.style.backgroundColor = "";
     });
